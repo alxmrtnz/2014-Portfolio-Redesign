@@ -125,29 +125,50 @@ body {
   .work article.workPiece {
     overflow: hidden;
     padding-bottom: 300px;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
+    .work article.workPiece.current .titleInfo {
+      position: fixed;
+      top: 0;
+      /* left: 0; */
+      width: 90%;
+      max-width: 1100px;
+      background: #9ab8a6; }
+    .work article.workPiece.current .workPieceContent {
+      margin-top: 105px; }
+      .work article.workPiece.current .workPieceContent .description {
+        position: fixed;
+        top: 105px; }
     .work article.workPiece .workContainer {
       padding: 0px 50px;
       max-width: 1100px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      position: relative; }
     .work article.workPiece .titleInfo {
       padding: 30px 0px 0px 0px;
-      position: relative; }
+      position: relative;
+      z-index: 100; }
       .work article.workPiece .titleInfo h1 {
         font-family: 'Muli', sans-serif;
         font-size: 36px;
         color: #fff;
         border-bottom: 1px solid #fff;
         padding: 0px 0px 8px 0px; }
-    .work article.workPiece .description {
-      float: right;
-      width: 30%; }
-    .work article.workPiece .images {
-      float: left;
-      width: 67%; }
-      .work article.workPiece .images img {
-        width: 97%;
-        border: 8px solid #fff;
-        -webkit-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
-        -moz-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
-        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ; }
+    .work article.workPiece .workPieceContent {
+      position: relative;
+      overflow: hidden;
+      max-width: 1100px;
+      margin-top: 30px; }
+      .work article.workPiece .workPieceContent .description {
+        float: right;
+        width: 30%;
+        max-width: 330px; }
+      .work article.workPiece .workPieceContent .images {
+        float: left;
+        width: 67%; }
+        .work article.workPiece .workPieceContent .images img {
+          width: 97%;
+          border: 8px solid #fff;
+          -webkit-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
+          -moz-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
+          box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ; }
