@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery colorScroll plugin</title>
+	<style>
+		body {
+			margin: 0;
+			font: 16px/24px Helvetica, sans-serif;
+		}
+
+		#wrap {
+			position: relative;
+			width: 760px;
+			height: 5000px;
+			margin: 0 auto;
+		}
+
+		.box {
+			position: fixed;
+			width: 400px;
+			height: 400px;
+			top: 100px;
+			left: 50%;
+			margin-left: -200px;
+			background-color: #FFFFFF;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+	<div class="box"></div>
+
+	<!-- Javascripts -->
+	<script src="components/jquery/jquery.js"></script>	
+	<script src="components/jquery-mousewheel/jquery.mousewheel.js"></script>
+	<script src="src/jquery.colorscroll.js"></script>
+	<script>
+		// $('.box').on('mousewheel', function(event, delta, deltaX, deltaY) {
+		// 	console.log('delta X: ' + deltaX);
+		// 	console.log('delta Y: ' + deltaY);
+		// });
+
+		$('.box').colorScroll({
+			colors: [{
+				color: '#a2e9ff',
+				position: 500
+			}, {
+				color: '#9aff61',
+				position: 1000
+			}, {
+				color: '#aaff9e',
+				position: 4000
+			}, {
+				color: '#ffa378',
+				position: 2000
+			}, {
+				color: '#92b3ff',
+				position: '60%'
+			}]
+		});
+		
+		$('body').colorScroll();
+	</script>
+</body>
+</html>
