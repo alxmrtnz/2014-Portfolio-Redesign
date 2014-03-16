@@ -9,13 +9,13 @@ $( document ).ready(function() {
     //for the work section should begin
     var introHeight = win.height();
     intro.css('height', introHeight);
-    work.css('margin-top', introHeight);
+    //work.css('margin-top', introHeight);
 
-
+    console.log("INITIAL INTRO HEIGHT: "+ introHeight);
     $(window).on('resize', function(){
         introHeight = win.height();
         intro.css('height', introHeight);
-        work.css('margin-top', introHeight);
+        //work.css('margin-top', introHeight);
         console.log("RESIZE - introheight: "+introHeight);
     });
 
@@ -43,15 +43,18 @@ $( document ).ready(function() {
     console.log("start_pos: " + animation_begin_pos);
     console.log("end_pos: " + animation_end_pos);
 
+    //$alxBlue: rgb(56, 136, 222)
+    //Hands Green: rgb(154, 184, 166)
+    // OUMS Blue: rgb(101,196,229)
 
-
-    var beginning_color = new $.Color( 'rgb(154, 184, 166)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
-    var ending_color = new $.Color( 'rgb(101,196,229)' ); ;//what color we want to use in the end
+    var beginning_color = new $.Color( 'rgb(56, 136, 222)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
+    var ending_color = new $.Color( 'rgb(154, 184, 166)' ); ;//what color we want to use in the end
 
     var colors = ['rgb(154, 184, 166)', 'rgb(101,196,229)'];
     console.log(colors[0]);
     $(document).scroll(function() {
-       scroll_pos = $(this).scrollTop() - introHeight;
+       //scroll_pos = $(this).scrollTop() - introHeight;
+       scroll_pos = $(this).scrollTop();
        console.log(scroll_pos + " >= " + animation_begin_pos + " && " + scroll_pos + " <= " + animation_end_pos);
        if(scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos ) {
             // console.log( 'scrolling and animating' );
@@ -63,13 +66,13 @@ $( document ).ready(function() {
             var newBlue = beginning_color.blue() + ( ( ending_color.blue() - beginning_color.blue() ) * percentScrolled );
             var newColor = new $.Color( newRed, newGreen, newBlue );
             console.log( newColor.red(), newColor.green(), newColor.blue() );
-            $('.work').animate({ backgroundColor: newColor }, 0);
+            $('body').animate({ backgroundColor: newColor }, 0);
 
        } else if ( scroll_pos > animation_end_pos ) {
-            $('.work').animate({ backgroundColor: ending_color }, 0);
+            $('body').animate({ backgroundColor: ending_color }, 0);
 
        } else if ( scroll_pos < animation_begin_pos ) {
-            $('.work').animate({ backgroundColor: beginning_color }, 0);
+            $('body').animate({ backgroundColor: beginning_color }, 0);
        } else { }
     });
 

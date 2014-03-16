@@ -46,8 +46,10 @@ table {
   border-spacing: 0; }
 
 html, body {
-  height: 100%;
   width: 100%; }
+
+body {
+  background: #3888de; }
 
 p {
   font-family: 'Muli', sans-serif;
@@ -95,20 +97,13 @@ nav {
       font-family: 'Montserrat', sans-serif;
       color: #fff; }
 
-body {
-  background: #3888de; }
-
 .intro {
-  background: #3888de;
   width: 100%;
-  min-height: 600px;
-  position: fixed;
-  z-index: 1;
-  top: 0px; }
+  min-height: 600px; }
   .intro .introContainer {
     max-width: 1000px;
-    padding: 0px 50px;
-    margin: 75px auto 0px auto; }
+    padding: 75px 50px;
+    margin: 0 auto 0 auto; }
     .intro .introContainer h1.name {
       color: #fff;
       line-height: 135px;
@@ -116,9 +111,7 @@ body {
       font-size: 115px; }
 
 .work {
-  background: #9ab8a6;
   min-height: 1000px;
-  margin-top: 1000px;
   position: relative;
   width: 100%;
   z-index: 5; }
