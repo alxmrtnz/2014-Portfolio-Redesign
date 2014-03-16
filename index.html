@@ -10,6 +10,24 @@
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/animation.css">
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="css/fontello-ie7.css">
+        <![endif]-->
+        <script>
+          function toggleCodes(on) {
+            var obj = document.getElementById('icons');
+
+            if (on) {
+              obj.className += ' codesOn';
+            } else {
+              obj.className = obj.className.replace(' codesOn', '');
+            }
+          }
+
+        </script>
     </head>
     <body>
         <nav class="awake">
@@ -96,7 +114,13 @@
 
 
         <footer>
-
+            <i class="icon-github"></i>
+            <i class="icon-twitter"></i>
+            <i class="icon-facebook-squared"></i>
+            <i class="icon-linkedin"></i>
+            <i class="icon-dribbble"></i>
+            <i class="icon-spotify-circled"></i>
+            <i class="icon-instagram"></i>
         </footer>
 
 
