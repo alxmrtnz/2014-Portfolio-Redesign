@@ -14,6 +14,36 @@
     transition: $transition-property $transition-time $method;
 }
 
+@mixin animation($animation-name, $animation-time, $method){
+    -webkit-animation: $animation-name $animation-time $method;
+    -moz-animation: $animation-name $animation-time $method;
+    -ms-animation: $animation-name $animation-time $method;
+    -o-animation: $animation-name $animation-time $method;
+    animation: $animation-name $animation-time $method;
+}
+
+
+@-webkit-keyframes floating {
+  0%   { bottom: 20px; }
+  50% { bottom: 35px; }
+  100% { bottom: 20px; }
+}
+@-moz-keyframes floating {
+  0%   { bottom: 20px; }
+  50% { bottom: 35px; }
+  100% { bottom: 20px; }
+}
+@-o-keyframes floating {
+  0%   { bottom: 20px; }
+  50% { bottom: 35px; }
+  100% { bottom: 20px; }
+}
+@keyframes floating {
+  0%   { bottom: 20px; }
+  50% { bottom: 35px; }
+  100% { bottom: 20px; }
+}
+
 $mainGray: #555;
 
 $alxBlue: #3888de;
@@ -21,7 +51,8 @@ $handsGreen: #98baa3;
 $oumsBlue: #65C4E5;
 
 
-
+$break-1: 920px;
+$break-2: 800px;
 
 
 
@@ -132,10 +163,32 @@ p{
     letter-spacing: .02em;
 }
 
+span.strong{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+
+}
+
+a{
+    @include transition(all, .3s, ease);
+    color: #fff;
+    border-bottom: 1px dashed #fff;
+    text-decoration: none;
+    &:hover{
+        background: #fff;
+    }
+}
+
 .btn{
     width: 45%;
     float: left;
     display: block;
+    @media screen and (max-width: $break-1){
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
     &.right{
         float: right;
     }
@@ -160,7 +213,7 @@ p{
 
 //BEGIN NAV STYLES///////
 nav{
-    background: #ddd;
+    background: rgba(255,255,255,.2);
     height:50px;
     position:fixed;
     top:0;
@@ -181,6 +234,7 @@ nav{
 }
 
 
+$intro-break-1: 925px;
 //BEGIN INTRO STYLES////////////////////
 body{
     //background: $alxBlue;
@@ -189,26 +243,85 @@ body{
     //background: #fff;
     //background: $alxBlue;
     width: 100%;
-    min-height: 600px;
+    min-height: 900px;
+    position: relative;
+    @media screen and (max-width: $break-2){
+       min-height: 700px;
+    }
     //position: fixed;
     //z-index: 1;
     //top: 0px;
 
     .introContainer{
-        max-width: 1000px;
-        padding:75px 50px;
+        max-width: 1100px;
+        padding:150px 50px 0px 50px;
 
         margin: 0 auto 0 auto;
+        @media screen and (max-width: $break-2){
+            padding: 100px 20px 0px 20px;
+        }
         h1.name{
             //color: $mainGray;
             color: #fff;
             line-height: 135px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 115px;
+            font-size: 105px;
+            @media screen and (max-width: $intro-break-1){
+                font-size: 75px;
+                line-height: 95px;
+            }
+            @media screen and (max-width: 660px){
+                font-size: 65px;
+                line-height: 75px;
+            }
+            @media screen and (max-width: 590px){
+                font-size: 50px;
+                line-height: 65px;
+            }
+            @media screen and (max-width: 475px){
+                font-size: 36px;
+                line-height: 46px;
+            }
+            br{
+                @media screen and (max-width: $intro-break-1){
+
+                }
+            }
         }// end h1.name
+        p{
+            width: 825px;
+            font-size: 20px;
+            line-height: 32px;
+            margin-bottom: 15px;
+            @media screen and (max-width: $intro-break-1){
+                width: 100%;
+            }
+        }
+
+
 
     }// end .introContainer
 
+
+
+
+    div.startArrow{
+        height: 17px;
+        width: 32px;
+
+        margin: 0 auto;
+        position: absolute;
+        text-align: center;
+        bottom: 50px;
+        left: 0px;
+        right: 0px;
+        background-image: url(../images/arrow-down.png);
+        background-repeat: none;
+        background-image: url(../images/arrow-down.svg), none;
+        background-size: 100% auto;
+        //@include animation(floating, 5s, infinite);
+
+    }
 }// end .intro
 
 
@@ -253,6 +366,9 @@ body{
             max-width: 1100px;
             margin: 0 auto;
             overflow: hidden;
+            @media screen and (max-width: $break-2){
+                padding: 0px 20px;
+            }
         }// end .workContainer
 
         .titleInfo{
@@ -266,15 +382,38 @@ body{
                 padding: 0px 0px 8px 0px;
             }
 
+            .quickFacts{
+                margin: 10px 0px 15px 0px;
+                p{
+                    font-size: 16px;
+                    margin-bottom: 5px;
+
+                }
+            }
+
         }// end .titleInfo
 
         .description{
             float: right;
             width: 30%;
+            @media screen and (max-width: $break-2){
+                float: none;
+                width: 100%;
+            }
+            p{
+                margin-bottom: 15px;
+                &.desTitle{
+                    margin-bottom: 5px;
+                }
+            }
         }
         .images{
             float: left;
             width: 67%;
+            @media screen and (max-width: $break-2){
+                float: none;
+                width:100%;
+            }
             img{
                 width: 97%;
                 border: 8px solid #fff;

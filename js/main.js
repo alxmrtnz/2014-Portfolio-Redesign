@@ -18,7 +18,15 @@ $( document ).ready(function() {
     $(window).on('resize', function(){
         introHeight = win.height();
         intro.css('height', introHeight);
-        //work.css('margin-top', introHeight);
+        $('.workPiece').each(function(){
+            console.log('name: ' +$(this).attr('id') + " |  bgcolor: " + $(this).data("color") + " |  height: "+ $(this).outerHeight());
+            var obj = {
+                    name: $(this).attr('id'),
+                    BGcolor: $(this).data("color"),
+                    height: $(this).outerHeight()
+                };
+            works.push(obj);
+        });
 
 
     });
@@ -61,13 +69,13 @@ $( document ).ready(function() {
 
     //BUTTON LINK COLOR CHANGE///////////////////////////////////////
     //JS function for changing color of link text in buttons. Had to do this because the color of the text depends on the current background color
-    $( ".btn a" ).mouseenter(function() {
+    $( "a" ).mouseenter(function() {
         var BGColor = $('body').css('background-color');
         $(this).css('color', BGColor);
 
     });
 
-    $( ".btn a" ).mouseout(function() {
+    $( "a" ).mouseout(function() {
 
         $(this).css('color', '#fff');
     });

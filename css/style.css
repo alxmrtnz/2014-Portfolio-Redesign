@@ -1,3 +1,43 @@
+@-webkit-keyframes floating {
+  0% {
+    bottom: 20px; }
+
+  50% {
+    bottom: 35px; }
+
+  100% {
+    bottom: 20px; } }
+
+@-moz-keyframes floating {
+  0% {
+    bottom: 20px; }
+
+  50% {
+    bottom: 35px; }
+
+  100% {
+    bottom: 20px; } }
+
+@-o-keyframes floating {
+  0% {
+    bottom: 20px; }
+
+  50% {
+    bottom: 35px; }
+
+  100% {
+    bottom: 20px; } }
+
+@keyframes floating {
+  0% {
+    bottom: 20px; }
+
+  50% {
+    bottom: 35px; }
+
+  100% {
+    bottom: 20px; } }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -58,10 +98,32 @@ p {
   color: #fff;
   letter-spacing: .02em; }
 
+span.strong {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase; }
+
+a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #fff;
+  border-bottom: 1px dashed #fff;
+  text-decoration: none; }
+  a:hover {
+    background: #fff; }
+
 .btn {
   width: 45%;
   float: left;
   display: block; }
+  @media screen and (max-width: 920px) {
+    .btn {
+      float: none;
+      width: 100%;
+      margin-bottom: 10px; } }
   .btn.right {
     float: right; }
   .btn a {
@@ -81,7 +143,7 @@ p {
       background: #fff; }
 
 nav {
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.2);
   height: 50px;
   position: fixed;
   top: 0;
@@ -99,16 +161,60 @@ nav {
 
 .intro {
   width: 100%;
-  min-height: 600px; }
+  min-height: 900px;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    .intro {
+      min-height: 700px; } }
   .intro .introContainer {
-    max-width: 1000px;
-    padding: 75px 50px;
+    max-width: 1100px;
+    padding: 150px 50px 0px 50px;
     margin: 0 auto 0 auto; }
+    @media screen and (max-width: 800px) {
+      .intro .introContainer {
+        padding: 100px 20px 0px 20px; } }
     .intro .introContainer h1.name {
       color: #fff;
       line-height: 135px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 115px; }
+      font-size: 105px; }
+      @media screen and (max-width: 925px) {
+        .intro .introContainer h1.name {
+          font-size: 75px;
+          line-height: 95px; } }
+      @media screen and (max-width: 660px) {
+        .intro .introContainer h1.name {
+          font-size: 65px;
+          line-height: 75px; } }
+      @media screen and (max-width: 590px) {
+        .intro .introContainer h1.name {
+          font-size: 50px;
+          line-height: 65px; } }
+      @media screen and (max-width: 475px) {
+        .intro .introContainer h1.name {
+          font-size: 36px;
+          line-height: 46px; } }
+    .intro .introContainer p {
+      width: 825px;
+      font-size: 20px;
+      line-height: 32px;
+      margin-bottom: 15px; }
+      @media screen and (max-width: 925px) {
+        .intro .introContainer p {
+          width: 100%; } }
+  .intro div.startArrow {
+    height: 17px;
+    width: 32px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+    background-image: url(../images/arrow-down.png);
+    background-repeat: none;
+    background-image: url(../images/arrow-down.svg), none;
+    background-size: 100% auto; }
 
 .work {
   min-height: 1000px;
@@ -124,6 +230,9 @@ nav {
       max-width: 1100px;
       margin: 0 auto;
       overflow: hidden; }
+      @media screen and (max-width: 800px) {
+        .work article.workPiece .workContainer {
+          padding: 0px 20px; } }
     .work article.workPiece .titleInfo {
       padding: 30px 0px 0px 0px;
       position: relative; }
@@ -133,12 +242,29 @@ nav {
         color: #fff;
         border-bottom: 1px solid #fff;
         padding: 0px 0px 8px 0px; }
+      .work article.workPiece .titleInfo .quickFacts {
+        margin: 10px 0px 15px 0px; }
+        .work article.workPiece .titleInfo .quickFacts p {
+          font-size: 16px;
+          margin-bottom: 5px; }
     .work article.workPiece .description {
       float: right;
       width: 30%; }
+      @media screen and (max-width: 800px) {
+        .work article.workPiece .description {
+          float: none;
+          width: 100%; } }
+      .work article.workPiece .description p {
+        margin-bottom: 15px; }
+        .work article.workPiece .description p.desTitle {
+          margin-bottom: 5px; }
     .work article.workPiece .images {
       float: left;
       width: 67%; }
+      @media screen and (max-width: 800px) {
+        .work article.workPiece .images {
+          float: none;
+          width: 100%; } }
       .work article.workPiece .images img {
         width: 97%;
         border: 8px solid #fff;
