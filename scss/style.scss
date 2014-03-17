@@ -229,6 +229,25 @@ nav{
             font-size: 24px;
             font-family: 'Montserrat', sans-serif;
             color: #fff;
+            padding-top: 11px;
+            a{
+                text-decoration: none;
+                transition: color .25s;
+                -webkit-transition: color .25s;
+                border: 0px;
+                span{
+                    font-size: 0px;
+                    transition: font-size .25s;
+                    -webkit-transition: font-size .25s;
+                }
+                &:hover{
+                    background: none;
+                    span{
+                        font-size: 24px;
+                    }
+                }
+            }
+
         }
     }
 }
@@ -243,7 +262,7 @@ body{
     //background: #fff;
     //background: $alxBlue;
     width: 100%;
-    min-height: 900px;
+    min-height: 690px;
     position: relative;
     @media screen and (max-width: $break-2){
        min-height: 700px;
@@ -254,7 +273,7 @@ body{
 
     .introContainer{
         max-width: 1100px;
-        padding:150px 50px 0px 50px;
+        padding:100px 50px 0px 50px;
 
         margin: 0 auto 0 auto;
         @media screen and (max-width: $break-2){
@@ -381,6 +400,37 @@ body{
                 border-bottom: 1px solid #fff;
                 padding: 0px 0px 8px 0px;
             }
+            div.arrows{
+                position: absolute;
+                right: 0px;
+                top:40px;
+
+                div.upArrow, div.downArrow{
+                    width: 32px;
+                    height: 17px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                div.upArrow{
+
+                    margin-right:10px;
+                    background-image: url(../images/arrow-up.png);
+                    background-repeat: none;
+                    background-image: url(../images/arrow-up.svg), none;
+                    background-size: 100% auto;
+                    //@include animation(floating, 5s, infinite);
+
+                }
+                div.downArrow{
+                    background-image: url(../images/arrow-down.png);
+                    background-repeat: none;
+                    background-image: url(../images/arrow-down.svg), none;
+                    background-size: 100% auto;
+                    //@include animation(floating, 5s, infinite);
+
+                }
+            }
+
 
             .quickFacts{
                 margin: 10px 0px 15px 0px;
@@ -416,6 +466,7 @@ body{
             }
             img{
                 width: 97%;
+                margin-bottom: 25px;
                 border: 8px solid #fff;
                 @include box-shadow(5px, 5px, 0px, rgba(0, 0, 0, 0.15));
             }
@@ -452,7 +503,168 @@ footer{
 }
 
 
+///////////WORK SPOTLIGHT STYLES///////////////////////
 
+
+nav.spotlight{
+    background: none;
+    height:50px;
+    position: relative;
+    top:0;
+    width: 100%;
+    z-index: 100;
+    display: block;
+    overflow: hidden;
+    .logo{
+        float: left;
+    }
+    .container{
+        max-width: 900px;
+        padding: 0px 50px;
+        margin: 0px auto 0px auto;
+
+        .logo{
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+    }
+
+    a.back{
+        float: right;
+        border: 0px;
+        font-family: 'Muli', sans-serif;
+        margin-top:18px;
+        border: 0px;
+        &:hover{
+            opacity: .85;
+            background: none;
+        }
+    }
+}
+
+
+
+.caseStudy{
+    max-width: 800px;
+    color: #555;
+    margin: 0px auto 50px auto;
+    padding: 30px 50px;
+    //height:1000px;
+    background: #fff;
+    @include box-shadow(5px, 5px, 0px, rgba(0, 0, 0, 0.15));
+
+    .container{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    h1, h2{
+        font-family: 'Muli', sans-serif;
+
+    }
+    h1{
+        border-bottom: 1px solid #eee;
+        padding: 0px 0px 8px 0px;
+        font-size: 36px;
+    }
+    h2{
+        font-size: 24px;
+        margin-top:70px;
+    }
+    p{
+
+        color: #555;
+        font-size: 18px;
+        line-height: 32px;
+        margin-bottom: 30px;
+        &.subTitle{
+            margin-bottom: 0px;
+            font-size: 16px;
+            span{
+                color: #555;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .details{
+        overflow: hidden;
+        position: relative;
+    }
+    .sub{
+        float: left;
+    }
+
+    .btn{
+        width: 125px;
+        float: right;
+        margin-top: 13px;
+        display: block;
+        @media screen and (max-width: $break-1){
+
+        }
+
+        a{
+            @include transition(all, .3s, ease);
+
+            color: #555;
+            display: block;
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 5px;
+
+            &.hands{
+                border: 5px solid $handsGreen;
+                color: $handsGreen;
+                &:hover{
+                    background: $handsGreen;
+                    color: #fff;
+                }
+            }
+
+            &.oums{
+                border: 5px solid $oumsBlue;
+                color: $oumsBlue;
+                &:hover{
+                    background: $oumsBlue;
+                    color: #fff;
+                }
+
+            }//end .oums
+        }
+    }// end .study .btn
+
+    .imageHolder{
+        width: 100%;
+        img{
+            width:100%;
+            margin:20px 0px 0px 0px;
+            border: 1px solid #eee;
+        }
+
+        .subtitle{
+
+            background: #eee;
+            border: 1px solid #eee;
+            width: 100%;
+            margin: -3px auto 20px auto;
+
+            p{
+                padding: 8px 10px;
+                font-size: 16px;
+                margin: 0;
+                line-height: 24px;
+
+            }
+        }
+
+        &.subtitleLess{
+            margin-bottom: 20px;
+        }
+    }
+
+}
 
 
 

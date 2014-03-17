@@ -157,18 +157,32 @@ nav {
     nav .container .logo {
       font-size: 24px;
       font-family: 'Montserrat', sans-serif;
-      color: #fff; }
+      color: #fff;
+      padding-top: 11px; }
+      nav .container .logo a {
+        text-decoration: none;
+        transition: color .25s;
+        -webkit-transition: color .25s;
+        border: 0px; }
+        nav .container .logo a span {
+          font-size: 0px;
+          transition: font-size .25s;
+          -webkit-transition: font-size .25s; }
+        nav .container .logo a:hover {
+          background: none; }
+          nav .container .logo a:hover span {
+            font-size: 24px; }
 
 .intro {
   width: 100%;
-  min-height: 900px;
+  min-height: 690px;
   position: relative; }
   @media screen and (max-width: 800px) {
     .intro {
       min-height: 700px; } }
   .intro .introContainer {
     max-width: 1100px;
-    padding: 150px 50px 0px 50px;
+    padding: 100px 50px 0px 50px;
     margin: 0 auto 0 auto; }
     @media screen and (max-width: 800px) {
       .intro .introContainer {
@@ -242,6 +256,26 @@ nav {
         color: #fff;
         border-bottom: 1px solid #fff;
         padding: 0px 0px 8px 0px; }
+      .work article.workPiece .titleInfo div.arrows {
+        position: absolute;
+        right: 0px;
+        top: 40px; }
+        .work article.workPiece .titleInfo div.arrows div.upArrow, .work article.workPiece .titleInfo div.arrows div.downArrow {
+          width: 32px;
+          height: 17px;
+          display: inline-block;
+          cursor: pointer; }
+        .work article.workPiece .titleInfo div.arrows div.upArrow {
+          margin-right: 10px;
+          background-image: url(../images/arrow-up.png);
+          background-repeat: none;
+          background-image: url(../images/arrow-up.svg), none;
+          background-size: 100% auto; }
+        .work article.workPiece .titleInfo div.arrows div.downArrow {
+          background-image: url(../images/arrow-down.png);
+          background-repeat: none;
+          background-image: url(../images/arrow-down.svg), none;
+          background-size: 100% auto; }
       .work article.workPiece .titleInfo .quickFacts {
         margin: 10px 0px 15px 0px; }
         .work article.workPiece .titleInfo .quickFacts p {
@@ -267,6 +301,7 @@ nav {
           width: 100%; } }
       .work article.workPiece .images img {
         width: 97%;
+        margin-bottom: 25px;
         border: 8px solid #fff;
         -webkit-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
         -moz-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
@@ -284,3 +319,117 @@ footer {
     @media screen and (max-width: 800px) {
       footer div.footerContainer {
         padding: 0px 20px; } }
+
+nav.spotlight {
+  background: none;
+  height: 50px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: block;
+  overflow: hidden; }
+  nav.spotlight .logo {
+    float: left; }
+  nav.spotlight .container {
+    max-width: 900px;
+    padding: 0px 50px;
+    margin: 0px auto 0px auto; }
+    nav.spotlight .container .logo {
+      font-size: 24px;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff; }
+  nav.spotlight a.back {
+    float: right;
+    border: 0px;
+    font-family: 'Muli', sans-serif;
+    margin-top: 18px;
+    border: 0px; }
+    nav.spotlight a.back:hover {
+      opacity: .85;
+      background: none; }
+
+.caseStudy {
+  max-width: 800px;
+  color: #555;
+  margin: 0px auto 50px auto;
+  padding: 30px 50px;
+  background: #fff;
+  -webkit-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
+  -moz-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15) ; }
+  .caseStudy .container {
+    max-width: 700px;
+    margin: 0 auto; }
+  .caseStudy h1, .caseStudy h2 {
+    font-family: 'Muli', sans-serif; }
+  .caseStudy h1 {
+    border-bottom: 1px solid #eee;
+    padding: 0px 0px 8px 0px;
+    font-size: 36px; }
+  .caseStudy h2 {
+    font-size: 24px;
+    margin-top: 70px; }
+  .caseStudy p {
+    color: #555;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 30px; }
+    .caseStudy p.subTitle {
+      margin-bottom: 0px;
+      font-size: 16px; }
+      .caseStudy p.subTitle span {
+        color: #555;
+        font-size: 15px; }
+  .caseStudy .details {
+    overflow: hidden;
+    position: relative; }
+  .caseStudy .sub {
+    float: left; }
+  .caseStudy .btn {
+    width: 125px;
+    float: right;
+    margin-top: 13px;
+    display: block; }
+    .caseStudy .btn a {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      color: #555;
+      display: block;
+      font-family: 'Muli', sans-serif;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px 5px; }
+      .caseStudy .btn a.hands {
+        border: 5px solid #98baa3;
+        color: #98baa3; }
+        .caseStudy .btn a.hands:hover {
+          background: #98baa3;
+          color: #fff; }
+      .caseStudy .btn a.oums {
+        border: 5px solid #65c4e5;
+        color: #65c4e5; }
+        .caseStudy .btn a.oums:hover {
+          background: #65c4e5;
+          color: #fff; }
+  .caseStudy .imageHolder {
+    width: 100%; }
+    .caseStudy .imageHolder img {
+      width: 100%;
+      margin: 20px 0px 0px 0px;
+      border: 1px solid #eee; }
+    .caseStudy .imageHolder .subtitle {
+      background: #eee;
+      border: 1px solid #eee;
+      width: 100%;
+      margin: -3px auto 20px auto; }
+      .caseStudy .imageHolder .subtitle p {
+        padding: 8px 10px;
+        font-size: 16px;
+        margin: 0;
+        line-height: 24px; }
+    .caseStudy .imageHolder.subtitleLess {
+      margin-bottom: 20px; }

@@ -44,6 +44,15 @@ $( document ).ready(function() {
 
 
 
+
+
+
+
+
+
+
+
+    //BACKGROUND COLOR CHANGE PLUGIN THING///////////////
     $('body').colorScroll({
 
         colors: [{
@@ -54,17 +63,26 @@ $( document ).ready(function() {
             position: introHeight
         }, {
             color: works[0].BGcolor,
-            position: works[0].height + (works[0].height / 2)
+            position: introHeight + (works[0].height / 2)
         }, {
             color: works[1].BGcolor,
             position: introHeight + works[0].height
         }, {
             color: works[1].BGcolor,
-            position: introHeight + works[0].height + works[1].height
+            position: introHeight + works[0].height + (works[1].height / 2)
         },]
     });
 
     $('body').colorScroll();
+    ////////////////////////////////////////////////////////\
+
+
+
+
+
+
+
+
 
 
     //BUTTON LINK COLOR CHANGE///////////////////////////////////////
@@ -79,6 +97,8 @@ $( document ).ready(function() {
 
         $(this).css('color', '#fff');
     });
+
+
     ////////////////////////////////////////////////////////////
 
 
@@ -104,6 +124,24 @@ $( document ).ready(function() {
     $(document).scroll(function() {
 
         console.log('top: '+ $(document).scrollTop())
+    });
+
+
+
+
+
+    $(".upArrow").click(function() {
+        console.log($(this).closest('article').prev());
+        $('html, body').animate({
+            scrollTop: $(this).closest('article').prev().offset().top
+        }, 500);
+    });
+
+    $(".downArrow").click(function() {
+        console.log($(this).closest('article').next());
+        $('html, body').animate({
+            scrollTop: $(this).closest('article').next().offset().top
+        }, 500);
     });
 
 
