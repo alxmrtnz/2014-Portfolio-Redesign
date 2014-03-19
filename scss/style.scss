@@ -68,7 +68,17 @@ $break-2: 800px;
 
 
 
+.stickit {
+    margin-left: 660px;
+    position: fixed;
+    top: 0;
+}
 
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
 
 
 
@@ -385,6 +395,7 @@ body{
             max-width: 1100px;
             margin: 0 auto;
             overflow: hidden;
+            position: relative;
             @media screen and (max-width: $break-2){
                 padding: 0px 20px;
             }
@@ -446,6 +457,7 @@ body{
         .description{
             float: right;
             width: 30%;
+            max-width: 330px;
             @media screen and (max-width: $break-2){
                 float: none;
                 width: 100%;

@@ -49,7 +49,7 @@
         </section>
         <section class="work" >
             <article class="workPiece" id="hands" data-color="#98baa3">
-                <div class="workContainer">
+                <div class="workContainer stickem-container">
                     <div class="titleInfo">
                         <h1>Battle of the Hands</h1>
                         <div class="arrows">
@@ -63,7 +63,7 @@
                         </div>
                     </div><!-- end .titleInfo -->
 
-                    <div class="description">
+                    <div class="description stickem">
                         <p class="desTitle"><span class="strong">Description</span></p>
                         <p>A single-page, responsive, Wordpress integrated site for Ohio University's Multimedia Society.</p>
 
@@ -145,11 +145,11 @@
 
         <script src="js/jquery.colorscroll.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/jquery.stickem.js"></script>
         <script>
-            // $('.box').on('mousewheel', function(event, delta, deltaX, deltaY) {
-            //  console.log('delta X: ' + deltaX);
-            //  console.log('delta Y: ' + deltaY);
-            // });
+            $(document).ready(function() {
+                $('.work').stickem();
+            });
 
 
         </script>
