@@ -69,9 +69,9 @@ $break-2: 800px;
 
 
 .stickit {
-    margin-left: 660px;
-    position: fixed;
-    top: 0;
+   // margin-left: 660px;
+    //position: fixed !important;
+    //top: 0;
 }
 
 .stickit-end {
@@ -403,7 +403,17 @@ body{
 
         .titleInfo{
             padding: 30px 0px 0px 0px;
-            position: relative;
+            position: absolute;
+            left: 50px;
+            right: 50px;
+            max-width: 1100px;
+            &.stickit{
+                left: 50px;
+                right: 50px;
+
+                position: fixed !important;
+                top: 0;
+            }
             h1{
                 font-family: 'Muli', sans-serif;
                 font-size: 36px;
@@ -443,16 +453,19 @@ body{
             }
 
 
-            .quickFacts{
-                margin: 10px 0px 15px 0px;
-                p{
-                    font-size: 16px;
-                    margin-bottom: 5px;
 
-                }
-            }
 
         }// end .titleInfo
+
+
+        .quickFacts{
+            margin: 100px 0px 15px 0px;
+            p{
+                font-size: 16px;
+                margin-bottom: 5px;
+
+            }
+        }
 
         .description{
             float: right;
@@ -483,6 +496,10 @@ body{
                 @include box-shadow(5px, 5px, 0px, rgba(0, 0, 0, 0.15));
             }
 
+        }
+
+        .description, .images{
+            margin-top: 0px;
         }
 
 

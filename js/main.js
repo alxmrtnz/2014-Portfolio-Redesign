@@ -12,7 +12,9 @@ $( document ).ready(function() {
     //for the work section should begin
     var introHeight = win.height();
     intro.css('height', introHeight);
-    //work.css('margin-top', introHeight);
+
+
+    var titleFromLeft = ((win.width() - 1200) / 2) + (($('.workContainer').outerWidth() - $('.workContainer').width()) / 2);
 
     var fromRight = (win.width() - $('.workContainer').width()) / 2;
     $(window).on('resize', function(){
@@ -28,7 +30,12 @@ $( document ).ready(function() {
             works.push(obj);
         });
 
-
+        titleFromLeft = ((win.width() - 1200) / 2) + (($('.workContainer').outerWidth() - $('.workContainer').width()) / 2);
+        if($(window).width() > 1200){
+            $('.titleInfo.stickit').css({
+                left: titleFromLeft
+            });
+        }
     });
     //////////////////////////////////////////////////////
     var works = new Array();//create an array
@@ -53,7 +60,7 @@ $( document ).ready(function() {
 
 
     //BACKGROUND COLOR CHANGE PLUGIN THING///////////////
-    $('body').colorScroll({
+    $('body, .titleInfo').colorScroll({
 
         colors: [{
             color: '#3888de',

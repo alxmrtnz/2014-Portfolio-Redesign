@@ -49,21 +49,23 @@
         </section>
         <section class="work" >
             <article class="workPiece" id="hands" data-color="#98baa3">
-                <div class="workContainer stickem-container">
-                    <div class="titleInfo">
+                <div class="workContainer stickem-container" id="one">
+                    <div class="titleInfo stickem">
                         <h1>Battle of the Hands</h1>
                         <div class="arrows">
                             <div class="upArrow" style="opacity: .3; cursor: default;"></div>
                             <div class="downArrow"></div>
                         </div>
 
-                        <div class="quickFacts">
-                            <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
-                            <p><span class="strong">Role</span> UX Design, Art Direction</p>
-                        </div>
+
                     </div><!-- end .titleInfo -->
 
-                    <div class="description stickem">
+                    <div class="quickFacts">
+                        <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
+                        <p><span class="strong">Role</span> UX Design, Art Direction</p>
+                    </div>
+
+                    <div class="description ">
                         <p class="desTitle"><span class="strong">Description</span></p>
                         <p>A single-page, responsive, Wordpress integrated site for Ohio University's Multimedia Society.</p>
 
@@ -95,11 +97,11 @@
                             <div class="upArrow" style=""></div>
                             <div class="downArrow"></div>
                         </div>
-                        <div class="quickFacts">
-                            <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
-                            <p><span class="strong">Role</span> UX Design, Art Direction</p>
-                        </div>
                     </div><!-- end .titleInfo -->
+                    <div class="quickFacts">
+                        <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
+                        <p><span class="strong">Role</span> UX Design, Art Direction</p>
+                    </div>
 
                     <div class="description">
                         <p class="desTitle"><span class="strong">Description</span></p>
@@ -148,7 +150,7 @@
         <script src="js/jquery.stickem.js"></script>
         <script>
             $(document).ready(function() {
-                $('.work').stickem();
+                $('.work').stickem({});
             });
 
 
