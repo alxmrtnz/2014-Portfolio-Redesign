@@ -31,11 +31,11 @@ $( document ).ready(function() {
         });
 
         titleFromLeft = ((win.width() - 1200) / 2) + (($('.workContainer').outerWidth() - $('.workContainer').width()) / 2);
-        if($(window).width() > 1200){
+        /*if($(window).width() > 1200){
             $('.titleInfo.stickit').css({
                 left: titleFromLeft
             });
-        }
+        }*/
     });
     //////////////////////////////////////////////////////
     var works = new Array();//create an array
@@ -130,7 +130,7 @@ $( document ).ready(function() {
 
     $(document).scroll(function() {
 
-        console.log('top: '+ $(document).scrollTop())
+       // console.log('top: '+ $(document).scrollTop())
     });
 
 

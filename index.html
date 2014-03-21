@@ -48,36 +48,48 @@
             </div>
         </section>
         <section class="work" >
-            <article class="workPiece" id="hands" data-color="#98baa3">
-                <div class="workContainer stickem-container" id="one">
-                    <div class="titleInfo stickem">
+            <article class="workPiece  stickem-container" id="hands" data-color="#98baa3">
+                <div class="titleInfo stickem">
+                    <div class="fixieContainer">
                         <h1>Battle of the Hands</h1>
                         <div class="arrows">
                             <div class="upArrow" style="opacity: .3; cursor: default;"></div>
                             <div class="downArrow"></div>
                         </div>
 
+                        <div class="description ">
+                            <div class="fixieContainer">
+                                <div class="mainDescription">
+                                    <p class="desTitle"><span class="strong">Description</span></p>
+                                    <p>A single-page, responsive, Wordpress integrated site for Ohio University's Multimedia Society.</p>
 
-                    </div><!-- end .titleInfo -->
+                                    <div class="btn left">
+                                        <a href="http://battle-of-the-hands.herokuapp.com/" target="_blank">Visit Site</a>
+                                    </div>
+
+                                    <div class="btn right">
+                                        <a href="battleofthehands/index.html">Learn More</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div><!-- end .titleInfo -->
+                <div class="workContainer " id="one">
+
 
                     <div class="quickFacts">
                         <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
                         <p><span class="strong">Role</span> UX Design, Art Direction</p>
                     </div>
 
-                    <div class="description ">
-                        <p class="desTitle"><span class="strong">Description</span></p>
-                        <p>A single-page, responsive, Wordpress integrated site for Ohio University's Multimedia Society.</p>
 
-                        <div class="btn left">
-                            <a href="http://battle-of-the-hands.herokuapp.com/" target="_blank">Visit Site</a>
-                        </div>
-
-                        <div class="btn right">
-                            <a href="battleofthehands/index.html">Learn More</a>
-                        </div>
-
-                    </div>
                     <div class="images">
                         <img src="images/battleofthehands/battleofthehands-screenshot-1.jpg" alt="Battle of the Hands">
                         <img src="images/battleofthehands/battleofthehands-screenshot-2.jpg" alt="Battle of the Hands">
@@ -89,34 +101,54 @@
 
             </article><!-- end BOTH article -->
 
-            <article class="workPiece" style="height: 1000px;" id="oums" data-color="#65C4E5">
-                <div class="workContainer">
-                    <div class="titleInfo">
-                        <h1>Ohio University Multimedia Society</h1>
+
+            <article class="workPiece  stickem-container" id="hands" data-color="#65C4E5">
+                <div class="titleInfo stickem">
+                    <div class="fixieContainer">
+                        <h1>Battle of the Hands</h1>
                         <div class="arrows">
-                            <div class="upArrow" style=""></div>
+                            <div class="upArrow" style="opacity: .3; cursor: default;"></div>
                             <div class="downArrow"></div>
                         </div>
-                    </div><!-- end .titleInfo -->
+
+                        <div class="description ">
+                            <div class="fixieContainer">
+                                <div class="mainDescription">
+                                    <p class="desTitle"><span class="strong">Description</span></p>
+                                    <p>A single-page, responsive, Wordpress integrated site for Ohio University's Multimedia Society.</p>
+
+                                    <div class="btn left">
+                                        <a href="http://battle-of-the-hands.herokuapp.com/" target="_blank">Visit Site</a>
+                                    </div>
+
+                                    <div class="btn right">
+                                        <a href="battleofthehands/index.html">Learn More</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div><!-- end .titleInfo -->
+                <div class="workContainer " id="one">
+
+
                     <div class="quickFacts">
                         <p><span class="strong">Goal</span> Create a rock paper scissors web app</p>
                         <p><span class="strong">Role</span> UX Design, Art Direction</p>
                     </div>
 
-                    <div class="description">
-                        <p class="desTitle"><span class="strong">Description</span></p>
-                        <p>Having not been updated since 2010, the Ohio University Multimedia Society’s website was in dire need of a redesign. As president of OUMS, a group of dedicated students interested in design, development, production, animation and technology, I decided to update the group’s web presence and create a sleeker, more easily maintainable site.</p>
 
-                        <div class="btn left">
-                            <a href="index.html">Visit Site</a>
-                        </div>
-                        <div class="btn right">
-                            <a href="oums/index.html">Learn More</a>
-                        </div>
-
-                    </div>
                     <div class="images">
-                        <img src="images/both1.png" alt="">
+                        <img src="images/battleofthehands/battleofthehands-screenshot-1.jpg" alt="Battle of the Hands">
+                        <img src="images/battleofthehands/battleofthehands-screenshot-2.jpg" alt="Battle of the Hands">
+                        <img src="images/battleofthehands/battleofthehands-screenshot-3.jpg" alt="Battle of the Hands">
+                        <!--<img src="images/battleofthehands/battleofthehands-screenshot-4.jpg" alt="Battle of the Hands">-->
                     </div><!-- end .images -->
 
                 </div><!-- end .workContainer-->
@@ -151,7 +183,15 @@
         <script>
             $(document).ready(function() {
                 $('.work').stickem({});
+
+                $(window).on('resize', function(){
+                    if($(window).width() < 800){
+                        var sticky = $('.work').stickem();
+                        sticky.destroy();
+                    }
+                });
             });
+
 
 
         </script>

@@ -51,7 +51,7 @@ $handsGreen: #98baa3;
 $oumsBlue: #65C4E5;
 
 
-$break-1: 920px;
+$break-1: 990px;
 $break-2: 800px;
 
 
@@ -68,14 +68,18 @@ $break-2: 800px;
 
 
 
+.stickem-container {
+  position: relative;
+}
+
 .stickit {
-   // margin-left: 660px;
-    //position: fixed !important;
-    //top: 0;
+    //margin-left: 660px;
+    position: fixed !important;
+    top: 0;
 }
 
 .stickit-end {
-    bottom: 40px;
+    bottom: 400px;
     position: absolute;
     right: 0;
 }
@@ -387,7 +391,7 @@ body{
     z-index: 5;
     article.workPiece{
         overflow: hidden;
-        padding-bottom:300px;
+        margin-bottom:300px;
         width: 100%;
 
         .workContainer{
@@ -402,18 +406,24 @@ body{
         }// end .workContainer
 
         .titleInfo{
-            padding: 30px 0px 0px 0px;
+            width: 100%;
             position: absolute;
-            left: 50px;
-            right: 50px;
-            max-width: 1100px;
-            &.stickit{
+            z-index: 100;
+
+            height: 75px;
+            .fixieContainer{
+                padding: 30px 50px 0px 50px;
+                max-width: 1100px;
+                position: relative;
+                margin: 0 auto;
+            }
+           /* &.stickit{
                 left: 50px;
                 right: 50px;
 
                 position: fixed !important;
                 top: 0;
-            }
+            }*/
             h1{
                 font-family: 'Muli', sans-serif;
                 font-size: 36px;
@@ -423,7 +433,7 @@ body{
             }
             div.arrows{
                 position: absolute;
-                right: 0px;
+                right: 50px;
                 top:40px;
 
                 div.upArrow, div.downArrow{
@@ -468,9 +478,23 @@ body{
         }
 
         .description{
-            float: right;
-            width: 30%;
-            max-width: 330px;
+            width: 100%;
+            max-width: 1100px;
+            &.stickit{
+                margin-top: 168px;
+            }
+            .fixieContainer{
+                padding: 30px 0px 0px 50px;
+                max-width: 1100px;
+                position: relative;
+                margin: 0 auto;
+                .mainDescription{
+                    float: right;
+                    width: 30%;
+                    max-width: 330px;
+                }
+            }
+
             @media screen and (max-width: $break-2){
                 float: none;
                 width: 100%;

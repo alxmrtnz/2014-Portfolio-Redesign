@@ -70,6 +70,7 @@
 				$elem: $this,
 				elemHeight: $this.height(),
 				$container: $this.parents(_self.config.container),
+                classTitle: $this.hasClass('titleInfo'),
 				isStuck: false
 			};
 
@@ -89,7 +90,7 @@
 
 				item.containerInnerHeight = item.$container.height();
 				item.containerStart = item.$container.offset().top - _self.config.offset + _self.config.start + item.containerInner.padding.top + item.containerInner.border.top;
-				item.scrollFinish = item.containerStart - _self.config.start + (item.containerInnerHeight - item.elemHeight - 400);
+				item.scrollFinish = item.containerStart - _self.config.start + (item.containerInnerHeight - item.elemHeight);
 
 				//If the element is smaller than the container
 				if(item.containerInnerHeight > item.elemHeight) {
@@ -118,6 +119,7 @@
 		handleScroll: function() {
 			var _self = this;
 
+
 			if(_self.items.length > 0) {
 				var pos = _self.$win.scrollTop();
 
@@ -128,8 +130,15 @@
 					if((item.isStuck && (pos < item.containerStart || pos > item.scrollFinish)) || pos > item.scrollFinish) {
 						item.$elem.removeClass(_self.config.stickClass);
 
+                        if (item.classTitle === true){
+                            var defaultTitleLeft = (($('.workContainer').outerWidth() - $('.workContainer').width()) / 2);
+                            item.$elem.css({
+                                left: defaultTitleLeft
+                            });
+                        }
+
 						//only at the bottom
-						if(pos > (item.scrollFinish)) {
+						if(pos > item.scrollFinish) {
 							item.$elem.addClass(_self.config.endStickClass);
 
 						}
@@ -142,8 +151,23 @@
 						}
 
 					//If we need to stick it
-					} else if(item.isStuck === false && pos > item.containerStart && pos < item.scrollFinish) {
+					} else if(item.isStuck === false && pos > item.containerStart && pos < item.scrollFinish && item.classTitle === true && $(window).width() > 1200) {
+                            var titleFromLeft = (($(window).width() - 1200) / 2) + (($('.workContainer').outerWidth() - $('.workContainer').width()) / 2);
+
+                            item.$elem.removeClass(_self.config.endStickClass).addClass(_self.config.stickClass).css({
+                                left: titleFromLeft
+                            });;
+
+                            item.isStuck = true;
+
+                            //if supplied fire the onStick callback
+                            if(_self.config.onStick) {
+                                _self.config.onStick(item);
+                            }
+                    }
+                    else if(item.isStuck === false && pos > item.containerStart && pos < item.scrollFinish) {
 							item.$elem.removeClass(_self.config.endStickClass).addClass(_self.config.stickClass);
+
 							item.isStuck = true;
 
 							//if supplied fire the onStick callback

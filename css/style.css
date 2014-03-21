@@ -38,8 +38,15 @@
   100% {
     bottom: 20px; } }
 
+.stickem-container {
+  position: relative; }
+
+.stickit {
+  position: fixed !important;
+  top: 0; }
+
 .stickit-end {
-  bottom: 40px;
+  bottom: 400px;
   position: absolute;
   right: 0; }
 
@@ -124,7 +131,7 @@ a {
   width: 45%;
   float: left;
   display: block; }
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 990px) {
     .btn {
       float: none;
       width: 100%;
@@ -242,7 +249,7 @@ nav {
   z-index: 5; }
   .work article.workPiece {
     overflow: hidden;
-    padding-bottom: 300px;
+    margin-bottom: 300px;
     width: 100%; }
     .work article.workPiece .workContainer {
       padding: 0px 50px;
@@ -254,16 +261,22 @@ nav {
         .work article.workPiece .workContainer {
           padding: 0px 20px; } }
     .work article.workPiece .titleInfo {
-      padding: 30px 0px 0px 0px;
+      width: 100%;
       position: absolute;
-      left: 50px;
-      right: 50px;
-      max-width: 1100px; }
-      .work article.workPiece .titleInfo.stickit {
-        left: 50px;
-        right: 50px;
-        position: fixed !important;
-        top: 0; }
+      z-index: 100;
+      height: 75px;
+           /* &.stickit{
+                left: 50px;
+                right: 50px;
+
+                position: fixed !important;
+                top: 0;
+            }*/ }
+      .work article.workPiece .titleInfo .fixieContainer {
+        padding: 30px 50px 0px 50px;
+        max-width: 1100px;
+        position: relative;
+        margin: 0 auto; }
       .work article.workPiece .titleInfo h1 {
         font-family: 'Muli', sans-serif;
         font-size: 36px;
@@ -272,7 +285,7 @@ nav {
         padding: 0px 0px 8px 0px; }
       .work article.workPiece .titleInfo div.arrows {
         position: absolute;
-        right: 0px;
+        right: 50px;
         top: 40px; }
         .work article.workPiece .titleInfo div.arrows div.upArrow, .work article.workPiece .titleInfo div.arrows div.downArrow {
           width: 32px;
@@ -296,9 +309,19 @@ nav {
         font-size: 16px;
         margin-bottom: 5px; }
     .work article.workPiece .description {
-      float: right;
-      width: 30%;
-      max-width: 330px; }
+      width: 100%;
+      max-width: 1100px; }
+      .work article.workPiece .description.stickit {
+        margin-top: 168px; }
+      .work article.workPiece .description .fixieContainer {
+        padding: 30px 0px 0px 50px;
+        max-width: 1100px;
+        position: relative;
+        margin: 0 auto; }
+        .work article.workPiece .description .fixieContainer .mainDescription {
+          float: right;
+          width: 30%;
+          max-width: 330px; }
       @media screen and (max-width: 800px) {
         .work article.workPiece .description {
           float: none;
